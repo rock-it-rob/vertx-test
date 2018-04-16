@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>rob.proto.vertx.tcp</groupId>
-    <artifactId>vertx-tcp-test</artifactId>
+    <artifactId>vertx-grpc-test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
