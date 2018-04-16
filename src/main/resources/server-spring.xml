@@ -14,6 +14,11 @@
 
     <context:annotation-config/>
 
-    <bean id="serverVerticle" class="rob.proto.vertx.tcp.ServerVerticle"/>
+    <context:property-placeholder location="classpath:server.properties"/>
+
+    <bean id="serverVerticle" class="rob.proto.vertx.tcp.ServerVerticle">
+        <constructor-arg value="${server.port}"/>
+        <constructor-arg value="${server.host}"/>
+    </bean>
 
 </beans>
