@@ -1,15 +1,12 @@
-package rob.proto.vertx.tcp;
+package rob.proto.vertx.grpc.server;
 
-import com.sun.corba.se.spi.activation.Server;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetServer;
 import io.vertx.core.net.NetServerOptions;
 import io.vertx.core.net.NetSocket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * ServerVerticle runs a tcp server
