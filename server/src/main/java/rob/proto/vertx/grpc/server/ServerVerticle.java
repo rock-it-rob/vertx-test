@@ -1,12 +1,19 @@
 package rob.proto.vertx.grpc.server;
 
+import io.grpc.stub.StreamObserver;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.net.NetServer;
 import io.vertx.core.net.NetServerOptions;
 import io.vertx.core.net.NetSocket;
+import io.vertx.grpc.VertxServer;
+import io.vertx.grpc.VertxServerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rob.proto.vertx.grpc.api.Echo;
+import rob.proto.vertx.grpc.api.EchoServiceGrpc;
+
+import java.io.IOException;
 
 /**
  * ServerVerticle runs a tcp server
@@ -33,13 +40,25 @@ public class ServerVerticle extends AbstractVerticle
     }
 
     @Override
-    public void start()
+    public void start() throws IOException
     {
-        NetServer netServer = createServer();
-        netServer.connectHandler(this::handleConnection);
+        EchoServiceGrpc.EchoServiceImplBase service = new EchoServiceGrpc.EchoServiceImplBase()
+        {
+            @Override
+            public void echo(Echo.EchoRequest request, StreamObserver<Echo.EchoResponse> responseObserver)
+            {
+                final String result = "echo: " + request.getMessage();
+                Echo.EchoResponse response = Echo.EchoResponse.newBuilder().setMessage(result).build();
+                responseObserver.onNext(response);
+                responseObserver.onCompleted();
+            }
+        };
+
+        VertxServer server = VertxServerBuilder.forAddress(vertx, host, port)
+            .addService(service).build();
 
         log.info("Starting server");
-        netServer.listen();
+        server.start();
         log.info("Listening on " + host + ":" + port);
     }
 
@@ -47,27 +66,5 @@ public class ServerVerticle extends AbstractVerticle
     public void stop()
     {
         log.info("Stopping server");
-    }
-
-    /**
-     * Creates and returns the tcp server (unstarted).
-     *
-     * @return NetServer
-     */
-    private NetServer createServer()
-    {
-        NetServerOptions options = new NetServerOptions().setPort(port).setHost(host);
-        return getVertx().createNetServer(options);
-    }
-
-    private void handleConnection(NetSocket socket)
-    {
-        log.info("Handling socket");
-        socket.handler(this::handleBuffer);
-    }
-
-    private void handleBuffer(Buffer buffer)
-    {
-        log.info("Received buffer: " + buffer.toString());
     }
 }

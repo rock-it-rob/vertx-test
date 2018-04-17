@@ -16,7 +16,7 @@
 
     <context:property-placeholder location="classpath:server.properties"/>
 
-    <bean id="serverVerticle" class="ServerVerticle">
+    <bean id="serverVerticle" class="rob.proto.vertx.grpc.server.ServerVerticle">
         <constructor-arg value="${server.port}"/>
         <constructor-arg value="${server.host}"/>
     </bean>
