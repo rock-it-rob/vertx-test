@@ -8,6 +8,7 @@ public class Launcher
 {
     private static final Logger log = LoggerFactory.getLogger(Launcher.class);
     private static final String SPRING_XML = "classpath:client-spring.xml";
+    private static final int CALLS = 100;
 
     public static void main(String[] args)
     {
@@ -15,7 +16,13 @@ public class Launcher
                 GenericXmlApplicationContext applicationContext = new GenericXmlApplicationContext(SPRING_XML)
         )
         {
-
+            EchoClient echoClient = applicationContext.getBean(EchoClient.class);
+            for (int i = 0; i < CALLS; ++i)
+            {
+                final String message = "Sending call " + i;
+                System.out.println("Sending message: " + message);
+                echoClient.echo(message);
+            }
         }
     }
 }
