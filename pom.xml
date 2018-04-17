@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>server</module>
+        <module>client</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -67,6 +68,11 @@
             <dependency>
                 <groupId>io.grpc</groupId>
                 <artifactId>grpc-stub</artifactId>
+                <version>${grpc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.grpc</groupId>
+                <artifactId>grpc-netty</artifactId>
                 <version>${grpc.version}</version>
             </dependency>
         </dependencies>
