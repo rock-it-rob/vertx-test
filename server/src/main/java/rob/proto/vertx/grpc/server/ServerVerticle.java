@@ -1,19 +1,10 @@
 package rob.proto.vertx.grpc.server;
 
-import io.grpc.stub.StreamObserver;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.buffer.Buffer;
-import io.vertx.core.net.NetServer;
-import io.vertx.core.net.NetServerOptions;
-import io.vertx.core.net.NetSocket;
-import io.vertx.grpc.VertxServer;
-import io.vertx.grpc.VertxServerBuilder;
+import io.vertx.core.http.HttpServer;
+import io.vertx.core.http.HttpServerOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rob.proto.vertx.grpc.api.Echo;
-import rob.proto.vertx.grpc.api.EchoServiceGrpc;
-
-import java.io.IOException;
 
 /**
  * ServerVerticle runs a tcp server
@@ -40,25 +31,13 @@ public class ServerVerticle extends AbstractVerticle
     }
 
     @Override
-    public void start() throws IOException
+    public void start()
     {
-        EchoServiceGrpc.EchoServiceImplBase service = new EchoServiceGrpc.EchoServiceImplBase()
-        {
-            @Override
-            public void echo(Echo.EchoRequest request, StreamObserver<Echo.EchoResponse> responseObserver)
-            {
-                final String result = "echo: " + request.getMessage();
-                Echo.EchoResponse response = Echo.EchoResponse.newBuilder().setMessage(result).build();
-                responseObserver.onNext(response);
-                responseObserver.onCompleted();
-            }
-        };
-
-        VertxServer server = VertxServerBuilder.forAddress(vertx, host, port)
-            .addService(service).build();
+        HttpServerOptions options = new HttpServerOptions().setHost(host).setPort(port);
+        HttpServer httpServer = vertx.createHttpServer(options);
 
         log.info("Starting server");
-        server.start();
+        httpServer.listen();
         log.info("Listening on " + host + ":" + port);
     }
 
