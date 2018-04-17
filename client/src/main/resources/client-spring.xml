@@ -16,7 +16,7 @@
 
     <context:property-placeholder location="classpath:server.properties"/>
 
-    <bean id="echoClient" class="rob.proto.vertx.client.EchoClientImpl">
+    <bean id="echoClient" class="rob.proto.vertx.client.EchoClient">
         <constructor-arg value="${server.host}"/>
         <constructor-arg value="${server.port}"/>
     </bean>

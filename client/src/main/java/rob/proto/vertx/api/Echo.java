@@ -95,14 +95,14 @@ public final class Echo {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Echo.internal_static_EchoRequest_descriptor;
+      return rob.proto.vertx.api.Echo.internal_static_EchoRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Echo.internal_static_EchoRequest_fieldAccessorTable
+      return rob.proto.vertx.api.Echo.internal_static_EchoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Echo.EchoRequest.class, Echo.EchoRequest.Builder.class);
+              rob.proto.vertx.api.Echo.EchoRequest.class, rob.proto.vertx.api.Echo.EchoRequest.Builder.class);
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 1;
@@ -175,10 +175,10 @@ public final class Echo {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Echo.EchoRequest)) {
+      if (!(obj instanceof rob.proto.vertx.api.Echo.EchoRequest)) {
         return super.equals(obj);
       }
-      Echo.EchoRequest other = (Echo.EchoRequest) obj;
+      rob.proto.vertx.api.Echo.EchoRequest other = (rob.proto.vertx.api.Echo.EchoRequest) obj;
 
       boolean result = true;
       result = result && getMessage()
@@ -201,69 +201,69 @@ public final class Echo {
       return hash;
     }
 
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoRequest parseFrom(byte[] data)
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoRequest parseFrom(java.io.InputStream input)
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Echo.EchoRequest parseDelimitedFrom(java.io.InputStream input)
+    public static rob.proto.vertx.api.Echo.EchoRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Echo.EchoRequest parseDelimitedFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Echo.EchoRequest parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -275,7 +275,7 @@ public final class Echo {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Echo.EchoRequest prototype) {
+    public static Builder newBuilder(rob.proto.vertx.api.Echo.EchoRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -295,20 +295,20 @@ public final class Echo {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EchoRequest)
-        Echo.EchoRequestOrBuilder {
+        rob.proto.vertx.api.Echo.EchoRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Echo.internal_static_EchoRequest_descriptor;
+        return rob.proto.vertx.api.Echo.internal_static_EchoRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Echo.internal_static_EchoRequest_fieldAccessorTable
+        return rob.proto.vertx.api.Echo.internal_static_EchoRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Echo.EchoRequest.class, Echo.EchoRequest.Builder.class);
+                rob.proto.vertx.api.Echo.EchoRequest.class, rob.proto.vertx.api.Echo.EchoRequest.Builder.class);
       }
 
-      // Construct using Echo.EchoRequest.newBuilder()
+      // Construct using rob.proto.vertx.api.Echo.EchoRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -332,23 +332,23 @@ public final class Echo {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Echo.internal_static_EchoRequest_descriptor;
+        return rob.proto.vertx.api.Echo.internal_static_EchoRequest_descriptor;
       }
 
-      public Echo.EchoRequest getDefaultInstanceForType() {
-        return Echo.EchoRequest.getDefaultInstance();
+      public rob.proto.vertx.api.Echo.EchoRequest getDefaultInstanceForType() {
+        return rob.proto.vertx.api.Echo.EchoRequest.getDefaultInstance();
       }
 
-      public Echo.EchoRequest build() {
-        Echo.EchoRequest result = buildPartial();
+      public rob.proto.vertx.api.Echo.EchoRequest build() {
+        rob.proto.vertx.api.Echo.EchoRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Echo.EchoRequest buildPartial() {
-        Echo.EchoRequest result = new Echo.EchoRequest(this);
+      public rob.proto.vertx.api.Echo.EchoRequest buildPartial() {
+        rob.proto.vertx.api.Echo.EchoRequest result = new rob.proto.vertx.api.Echo.EchoRequest(this);
         result.message_ = message_;
         onBuilt();
         return result;
@@ -381,16 +381,16 @@ public final class Echo {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Echo.EchoRequest) {
-          return mergeFrom((Echo.EchoRequest)other);
+        if (other instanceof rob.proto.vertx.api.Echo.EchoRequest) {
+          return mergeFrom((rob.proto.vertx.api.Echo.EchoRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Echo.EchoRequest other) {
-        if (other == Echo.EchoRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(rob.proto.vertx.api.Echo.EchoRequest other) {
+        if (other == rob.proto.vertx.api.Echo.EchoRequest.getDefaultInstance()) return this;
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           onChanged();
@@ -408,11 +408,11 @@ public final class Echo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Echo.EchoRequest parsedMessage = null;
+        rob.proto.vertx.api.Echo.EchoRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Echo.EchoRequest) e.getUnfinishedMessage();
+          parsedMessage = (rob.proto.vertx.api.Echo.EchoRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -505,12 +505,12 @@ public final class Echo {
     }
 
     // @@protoc_insertion_point(class_scope:EchoRequest)
-    private static final Echo.EchoRequest DEFAULT_INSTANCE;
+    private static final rob.proto.vertx.api.Echo.EchoRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Echo.EchoRequest();
+      DEFAULT_INSTANCE = new rob.proto.vertx.api.Echo.EchoRequest();
     }
 
-    public static Echo.EchoRequest getDefaultInstance() {
+    public static rob.proto.vertx.api.Echo.EchoRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -533,7 +533,7 @@ public final class Echo {
       return PARSER;
     }
 
-    public Echo.EchoRequest getDefaultInstanceForType() {
+    public rob.proto.vertx.api.Echo.EchoRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -620,14 +620,14 @@ public final class Echo {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Echo.internal_static_EchoResponse_descriptor;
+      return rob.proto.vertx.api.Echo.internal_static_EchoResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Echo.internal_static_EchoResponse_fieldAccessorTable
+      return rob.proto.vertx.api.Echo.internal_static_EchoResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Echo.EchoResponse.class, Echo.EchoResponse.Builder.class);
+              rob.proto.vertx.api.Echo.EchoResponse.class, rob.proto.vertx.api.Echo.EchoResponse.Builder.class);
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 1;
@@ -700,10 +700,10 @@ public final class Echo {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Echo.EchoResponse)) {
+      if (!(obj instanceof rob.proto.vertx.api.Echo.EchoResponse)) {
         return super.equals(obj);
       }
-      Echo.EchoResponse other = (Echo.EchoResponse) obj;
+      rob.proto.vertx.api.Echo.EchoResponse other = (rob.proto.vertx.api.Echo.EchoResponse) obj;
 
       boolean result = true;
       result = result && getMessage()
@@ -726,69 +726,69 @@ public final class Echo {
       return hash;
     }
 
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoResponse parseFrom(byte[] data)
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Echo.EchoResponse parseFrom(java.io.InputStream input)
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Echo.EchoResponse parseDelimitedFrom(java.io.InputStream input)
+    public static rob.proto.vertx.api.Echo.EchoResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Echo.EchoResponse parseDelimitedFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Echo.EchoResponse parseFrom(
+    public static rob.proto.vertx.api.Echo.EchoResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -800,7 +800,7 @@ public final class Echo {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Echo.EchoResponse prototype) {
+    public static Builder newBuilder(rob.proto.vertx.api.Echo.EchoResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -820,20 +820,20 @@ public final class Echo {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EchoResponse)
-        Echo.EchoResponseOrBuilder {
+        rob.proto.vertx.api.Echo.EchoResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Echo.internal_static_EchoResponse_descriptor;
+        return rob.proto.vertx.api.Echo.internal_static_EchoResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Echo.internal_static_EchoResponse_fieldAccessorTable
+        return rob.proto.vertx.api.Echo.internal_static_EchoResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Echo.EchoResponse.class, Echo.EchoResponse.Builder.class);
+                rob.proto.vertx.api.Echo.EchoResponse.class, rob.proto.vertx.api.Echo.EchoResponse.Builder.class);
       }
 
-      // Construct using Echo.EchoResponse.newBuilder()
+      // Construct using rob.proto.vertx.api.Echo.EchoResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -857,23 +857,23 @@ public final class Echo {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Echo.internal_static_EchoResponse_descriptor;
+        return rob.proto.vertx.api.Echo.internal_static_EchoResponse_descriptor;
       }
 
-      public Echo.EchoResponse getDefaultInstanceForType() {
-        return Echo.EchoResponse.getDefaultInstance();
+      public rob.proto.vertx.api.Echo.EchoResponse getDefaultInstanceForType() {
+        return rob.proto.vertx.api.Echo.EchoResponse.getDefaultInstance();
       }
 
-      public Echo.EchoResponse build() {
-        Echo.EchoResponse result = buildPartial();
+      public rob.proto.vertx.api.Echo.EchoResponse build() {
+        rob.proto.vertx.api.Echo.EchoResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Echo.EchoResponse buildPartial() {
-        Echo.EchoResponse result = new Echo.EchoResponse(this);
+      public rob.proto.vertx.api.Echo.EchoResponse buildPartial() {
+        rob.proto.vertx.api.Echo.EchoResponse result = new rob.proto.vertx.api.Echo.EchoResponse(this);
         result.message_ = message_;
         onBuilt();
         return result;
@@ -906,16 +906,16 @@ public final class Echo {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Echo.EchoResponse) {
-          return mergeFrom((Echo.EchoResponse)other);
+        if (other instanceof rob.proto.vertx.api.Echo.EchoResponse) {
+          return mergeFrom((rob.proto.vertx.api.Echo.EchoResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Echo.EchoResponse other) {
-        if (other == Echo.EchoResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(rob.proto.vertx.api.Echo.EchoResponse other) {
+        if (other == rob.proto.vertx.api.Echo.EchoResponse.getDefaultInstance()) return this;
         if (!other.getMessage().isEmpty()) {
           message_ = other.message_;
           onChanged();
@@ -933,11 +933,11 @@ public final class Echo {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Echo.EchoResponse parsedMessage = null;
+        rob.proto.vertx.api.Echo.EchoResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Echo.EchoResponse) e.getUnfinishedMessage();
+          parsedMessage = (rob.proto.vertx.api.Echo.EchoResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1030,12 +1030,12 @@ public final class Echo {
     }
 
     // @@protoc_insertion_point(class_scope:EchoResponse)
-    private static final Echo.EchoResponse DEFAULT_INSTANCE;
+    private static final rob.proto.vertx.api.Echo.EchoResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Echo.EchoResponse();
+      DEFAULT_INSTANCE = new rob.proto.vertx.api.Echo.EchoResponse();
     }
 
-    public static Echo.EchoResponse getDefaultInstance() {
+    public static rob.proto.vertx.api.Echo.EchoResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1058,7 +1058,7 @@ public final class Echo {
       return PARSER;
     }
 
-    public Echo.EchoResponse getDefaultInstanceForType() {
+    public rob.proto.vertx.api.Echo.EchoResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1084,10 +1084,8 @@ public final class Echo {
   static {
     java.lang.String[] descriptorData = {
       "\n\necho.proto\"\036\n\013EchoRequest\022\017\n\007message\030\001" +
-      " \001(\t\"\037\n\014EchoResponse\022\017\n\007message\030\001 \001(\t22\n" +
-      "\013EchoService\022#\n\004echo\022\014.EchoRequest\032\r.Ech" +
-      "oResponseB\032\n\030rob.proto.vertx.grpc.apib\006p" +
-      "roto3"
+      " \001(\t\"\037\n\014EchoResponse\022\017\n\007message\030\001 \001(\tB\025\n" +
+      "\023rob.proto.vertx.apib\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
