@@ -10,6 +10,7 @@ public class Launcher
     private static final Logger log = LoggerFactory.getLogger(Launcher.class);
     private static final String SPRING_XML = "classpath:client-spring.xml";
     private static final int CALLS = 100;
+    private static final Vertx vertx = Vertx.vertx();
 
     public static void main(String[] args) throws InterruptedException
     {
@@ -18,15 +19,16 @@ public class Launcher
         )
         {
             EchoClient echoClient = applicationContext.getBean(EchoClient.class);
-            Vertx vertx = Vertx.vertx();
-            vertx.deployVerticle(echoClient);
-            Thread.sleep(2000);
-            for (int i = 0; i < CALLS; ++i)
-            {
-                final String message = "Sending call " + i;
-                System.out.println("Sending message: " + message);
-                echoClient.echo(message);
-            }
+            vertx.deployVerticle(echoClient, result -> {
+                for (int i = 0; i < CALLS; ++i)
+                {
+                    final String message = "Sending call " + i;
+                    System.out.println("Sending message: " + message);
+                    echoClient.echo(message);
+                }
+            });
         }
+        Thread.sleep(2000);
+        vertx.close();
     }
 }

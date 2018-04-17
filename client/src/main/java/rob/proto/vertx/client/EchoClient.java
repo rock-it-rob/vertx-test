@@ -34,7 +34,7 @@ public class EchoClient extends AbstractVerticle
 
     public void echo(String message)
     {
-        client.getNow("/", this::handleResponse);
+        client.post("/", this::handleResponse).end(message);
     }
 
     private void handleResponse(HttpClientResponse response)
