@@ -38,9 +38,10 @@ public class EchoClient extends AbstractVerticle
     public void echo(String message)
     {
         Echo.EchoRequest echoRequest = makeRequest(message);
-        log.debug("request=" + echoRequest);
+        //log.debug("request=" + echoRequest);
+        log.debug("EchoRequest=" + formatEchoRequest(echoRequest));
         Buffer buffer = Buffer.buffer(echoRequest.toByteArray());
-        log.info("Sending: " + buffer);
+        //log.info("Sending: " + buffer);
         client.post("/", this::handleResponse).end(buffer);
     }
 
@@ -59,6 +60,7 @@ public class EchoClient extends AbstractVerticle
                         buffer.getBytes()
                     );
                     log.info("Recieved: " + echoResponse);
+                    log.debug("EchoResponse=" + formatEchoResponse(echoResponse));
                 }
                 catch (InvalidProtocolBufferException e)
                 {
@@ -66,5 +68,29 @@ public class EchoClient extends AbstractVerticle
                 }
             }
         );
+    }
+
+    private String formatEchoRequest(Echo.EchoRequest request)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (byte b : request.toByteArray())
+        {
+            sb.append((int) b);
+            sb.append(' ');
+        }
+
+        return sb.toString();
+    }
+
+    private String formatEchoResponse(Echo.EchoResponse response)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (byte b : response.toByteArray())
+        {
+            sb.append((int) b);
+            sb.append(' ');
+        }
+
+        return sb.toString();
     }
 }
