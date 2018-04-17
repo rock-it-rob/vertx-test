@@ -1,4 +1,4 @@
-package rob.proto.vertx.grpc.client;
+package rob.proto.vertx.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

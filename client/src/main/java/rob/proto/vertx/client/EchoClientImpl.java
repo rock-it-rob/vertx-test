@@ -1,10 +1,10 @@
-package rob.proto.vertx.grpc.client;
+package rob.proto.vertx.client;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-import rob.proto.vertx.grpc.api.Echo;
-import rob.proto.vertx.grpc.api.EchoServiceGrpc;
+import rob.proto.vertx.api.Echo;
+import rob.proto.vertx.api.EchoServiceGrpc;
 
 import java.util.concurrent.TimeUnit;
 

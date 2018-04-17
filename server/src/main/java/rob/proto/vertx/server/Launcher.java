@@ -1,4 +1,4 @@
-package rob.proto.vertx.grpc.server;
+package rob.proto.vertx.server;
 
 import io.vertx.core.Vertx;
 import org.springframework.context.support.GenericXmlApplicationContext;

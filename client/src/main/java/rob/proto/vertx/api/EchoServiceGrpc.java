@@ -1,4 +1,4 @@
-package rob.proto.vertx.grpc.api;
+package rob.proto.vertx.api;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -29,34 +29,34 @@ public final class EchoServiceGrpc {
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getEchoMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<rob.proto.vertx.grpc.api.Echo.EchoRequest,
-      rob.proto.vertx.grpc.api.Echo.EchoResponse> METHOD_ECHO = getEchoMethodHelper();
+  public static final io.grpc.MethodDescriptor<Echo.EchoRequest,
+          Echo.EchoResponse> METHOD_ECHO = getEchoMethodHelper();
 
-  private static volatile io.grpc.MethodDescriptor<rob.proto.vertx.grpc.api.Echo.EchoRequest,
-      rob.proto.vertx.grpc.api.Echo.EchoResponse> getEchoMethod;
+  private static volatile io.grpc.MethodDescriptor<Echo.EchoRequest,
+          Echo.EchoResponse> getEchoMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<rob.proto.vertx.grpc.api.Echo.EchoRequest,
-      rob.proto.vertx.grpc.api.Echo.EchoResponse> getEchoMethod() {
+  public static io.grpc.MethodDescriptor<Echo.EchoRequest,
+          Echo.EchoResponse> getEchoMethod() {
     return getEchoMethodHelper();
   }
 
-  private static io.grpc.MethodDescriptor<rob.proto.vertx.grpc.api.Echo.EchoRequest,
-      rob.proto.vertx.grpc.api.Echo.EchoResponse> getEchoMethodHelper() {
-    io.grpc.MethodDescriptor<rob.proto.vertx.grpc.api.Echo.EchoRequest, rob.proto.vertx.grpc.api.Echo.EchoResponse> getEchoMethod;
+  private static io.grpc.MethodDescriptor<Echo.EchoRequest,
+          Echo.EchoResponse> getEchoMethodHelper() {
+    io.grpc.MethodDescriptor<Echo.EchoRequest, Echo.EchoResponse> getEchoMethod;
     if ((getEchoMethod = EchoServiceGrpc.getEchoMethod) == null) {
       synchronized (EchoServiceGrpc.class) {
         if ((getEchoMethod = EchoServiceGrpc.getEchoMethod) == null) {
           EchoServiceGrpc.getEchoMethod = getEchoMethod = 
-              io.grpc.MethodDescriptor.<rob.proto.vertx.grpc.api.Echo.EchoRequest, rob.proto.vertx.grpc.api.Echo.EchoResponse>newBuilder()
+              io.grpc.MethodDescriptor.<Echo.EchoRequest, Echo.EchoResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "EchoService", "echo"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  rob.proto.vertx.grpc.api.Echo.EchoRequest.getDefaultInstance()))
+                  Echo.EchoRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  rob.proto.vertx.grpc.api.Echo.EchoResponse.getDefaultInstance()))
+                  Echo.EchoResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new EchoServiceMethodDescriptorSupplier("echo"))
                   .build();
           }
@@ -94,8 +94,8 @@ public final class EchoServiceGrpc {
 
     /**
      */
-    public void echo(rob.proto.vertx.grpc.api.Echo.EchoRequest request,
-        io.grpc.stub.StreamObserver<rob.proto.vertx.grpc.api.Echo.EchoResponse> responseObserver) {
+    public void echo(Echo.EchoRequest request,
+        io.grpc.stub.StreamObserver<Echo.EchoResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getEchoMethodHelper(), responseObserver);
     }
 
@@ -105,8 +105,8 @@ public final class EchoServiceGrpc {
             getEchoMethodHelper(),
             asyncUnaryCall(
               new MethodHandlers<
-                rob.proto.vertx.grpc.api.Echo.EchoRequest,
-                rob.proto.vertx.grpc.api.Echo.EchoResponse>(
+                      Echo.EchoRequest,
+                      Echo.EchoResponse>(
                   this, METHODID_ECHO)))
           .build();
     }
@@ -132,8 +132,8 @@ public final class EchoServiceGrpc {
 
     /**
      */
-    public void echo(rob.proto.vertx.grpc.api.Echo.EchoRequest request,
-        io.grpc.stub.StreamObserver<rob.proto.vertx.grpc.api.Echo.EchoResponse> responseObserver) {
+    public void echo(Echo.EchoRequest request,
+        io.grpc.stub.StreamObserver<Echo.EchoResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getEchoMethodHelper(), getCallOptions()), request, responseObserver);
     }
@@ -159,7 +159,7 @@ public final class EchoServiceGrpc {
 
     /**
      */
-    public rob.proto.vertx.grpc.api.Echo.EchoResponse echo(rob.proto.vertx.grpc.api.Echo.EchoRequest request) {
+    public Echo.EchoResponse echo(Echo.EchoRequest request) {
       return blockingUnaryCall(
           getChannel(), getEchoMethodHelper(), getCallOptions(), request);
     }
@@ -185,8 +185,8 @@ public final class EchoServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<rob.proto.vertx.grpc.api.Echo.EchoResponse> echo(
-        rob.proto.vertx.grpc.api.Echo.EchoRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<Echo.EchoResponse> echo(
+        Echo.EchoRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getEchoMethodHelper(), getCallOptions()), request);
     }
@@ -212,8 +212,8 @@ public final class EchoServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_ECHO:
-          serviceImpl.echo((rob.proto.vertx.grpc.api.Echo.EchoRequest) request,
-              (io.grpc.stub.StreamObserver<rob.proto.vertx.grpc.api.Echo.EchoResponse>) responseObserver);
+          serviceImpl.echo((Echo.EchoRequest) request,
+              (io.grpc.stub.StreamObserver<Echo.EchoResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -237,7 +237,7 @@ public final class EchoServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return rob.proto.vertx.grpc.api.Echo.getDescriptor();
+      return Echo.getDescriptor();
     }
 
     @java.lang.Override

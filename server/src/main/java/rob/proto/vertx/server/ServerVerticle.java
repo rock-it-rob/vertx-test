@@ -1,4 +1,4 @@
-package rob.proto.vertx.grpc.server;
+package rob.proto.vertx.server;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.http.HttpServer;

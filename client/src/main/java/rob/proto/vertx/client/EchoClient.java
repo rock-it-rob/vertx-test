@@ -1,4 +1,4 @@
-package rob.proto.vertx.grpc.client;
+package rob.proto.vertx.client;
 
 public interface EchoClient
 {
