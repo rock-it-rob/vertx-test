@@ -2,6 +2,7 @@ package rob.proto.vertx.server;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
+import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.http.HttpServerRequest;
@@ -68,19 +69,18 @@ public class ServerVerticle extends AbstractVerticle
     private void handleServerRequest(HttpServerRequest request)
     {
         request.bodyHandler(buffer -> {
-            vertx.eventBus().<String>send(requestBusAddress, buffer.toString(),
-                    reply -> {
-                        if (reply.succeeded())
-                        {
-                            request.response().end(reply.result().body());
-                        }
-                        else
-                        {
-                            final String cause = reply.cause().getMessage();
-                            log.error(cause);
-                            request.response().setStatusCode(500).setStatusMessage(cause).end();
-                        }
-                    });
+            vertx.eventBus().<Buffer>send(requestBusAddress, buffer,
+                reply -> {
+                    if (reply.succeeded())
+                    {
+                        request.response().end(reply.result().body());
+                    } else
+                    {
+                        final String cause = reply.cause().getMessage();
+                        log.error(cause);
+                        request.response().setStatusCode(500).setStatusMessage(cause).end();
+                    }
+                });
         });
     }
 }

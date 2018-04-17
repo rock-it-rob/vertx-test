@@ -22,8 +22,7 @@ public class Launcher
             vertx.deployVerticle(echoClient, result -> {
                 for (int i = 0; i < CALLS; ++i)
                 {
-                    final String message = "Sending call " + i;
-                    System.out.println("Sending message: " + message);
+                    final String message = "call " + i;
                     echoClient.echo(message);
                 }
             });

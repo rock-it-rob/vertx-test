@@ -11,5 +11,6 @@
     </root>
 
     <logger name="org.springframework" level="warn"/>
+    <logger name="rob.proto.vertx.client" level="debug"/>
 
 </configuration>

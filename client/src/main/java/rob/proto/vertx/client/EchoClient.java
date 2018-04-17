@@ -1,12 +1,15 @@
 package rob.proto.vertx.client;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpClient;
 import io.vertx.core.http.HttpClientOptions;
 import io.vertx.core.http.HttpClientResponse;
 import io.vertx.core.http.HttpVersion;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rob.proto.vertx.api.Echo;
 
 public class EchoClient extends AbstractVerticle
 {
@@ -28,19 +31,40 @@ public class EchoClient extends AbstractVerticle
     public void start()
     {
         HttpClientOptions options = new HttpClientOptions().setProtocolVersion(HttpVersion.HTTP_2)
-                .setSsl(false).setUseAlpn(false).setDefaultHost(hostname).setDefaultPort(port);
+            .setSsl(false).setUseAlpn(false).setDefaultHost(hostname).setDefaultPort(port);
         client = vertx.createHttpClient(options);
     }
 
     public void echo(String message)
     {
-        client.post("/", this::handleResponse).end(message);
+        Echo.EchoRequest echoRequest = makeRequest(message);
+        log.debug("request=" + echoRequest);
+        Buffer buffer = Buffer.buffer(echoRequest.toByteArray());
+        log.info("Sending: " + buffer);
+        client.post("/", this::handleResponse).end(buffer);
+    }
+
+    private Echo.EchoRequest makeRequest(String s)
+    {
+        return Echo.EchoRequest.newBuilder().setMessage(s).build();
     }
 
     private void handleResponse(HttpClientResponse response)
     {
         response.bodyHandler(buffer ->
-                log.info("Recieved: " + buffer.toString())
+            {
+                try
+                {
+                    Echo.EchoResponse echoResponse = Echo.EchoResponse.parseFrom(
+                        buffer.getBytes()
+                    );
+                    log.info("Recieved: " + echoResponse);
+                }
+                catch (InvalidProtocolBufferException e)
+                {
+                    throw new RuntimeException(e);
+                }
+            }
         );
     }
 }
