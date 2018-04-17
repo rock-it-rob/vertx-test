@@ -21,4 +21,6 @@
         <constructor-arg value="${server.host}"/>
     </bean>
 
+    <bean id="workerVerticle" class="rob.proto.vertx.server.WorkerVerticle"/>
+
 </beans>
